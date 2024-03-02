@@ -7,7 +7,7 @@
     --nav-button-radius: 0.75em 0.3em 0.5em 0.3em;
     --nav-logo-radius: 1em;
     --nav-icon-container-width: 14em;
-    --nav-menu-container-width: 17em;
+    --nav-menu-container-width: 20em;
 
     --nav-color-hover: #7EC3F1;
     --nav-border-hover: 4px solid #7EC3F1;
@@ -33,13 +33,14 @@ body {
 
 nav {
     width: 100%;
-    padding: 0.3em 0 0;
+    padding: 0.5em 0;
     color: var(--nav-font-color);
     background: var(--nav-background-color);
 
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 5%;
 }
 
 /* General nav styles */
@@ -48,7 +49,7 @@ nav ul {
 
     display: flex;
     flex-flow: row nowrap;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 nav a {
@@ -58,8 +59,6 @@ nav a {
 nav ul li {
     color: var(--nav-font-color);
     transition: all 0.2s ease-in;
-    
-    flex: 1 1; /*buttons should shrink and grow with same rates*/
 }
 
 /* Specific nav icon styles*/
@@ -77,7 +76,7 @@ nav ul#navbar-icons img {
 }
 
 nav ul#navbar-icons img:hover {
-    scale: 1.25;
+    scale: 1.4;
     filter: var(--nav-icon-hover-filter);
 
 }
@@ -88,9 +87,11 @@ nav ul#navbar-menu {
 }
 
 nav ul#navbar-menu li {
-    padding: 0.25em 0.4em;
+    padding: 0.25em 0.75em;
     border: 2px solid var(--nav-font-color);
     border-radius: var(--nav-button-radius);
+
+    text-align: center;
 }
 
 nav ul#navbar-menu li:hover {
@@ -104,7 +105,7 @@ nav ul#navbar-menu li:hover {
 /* Nav logo styles*/
 nav #site-logo {
     filter: var(--nav-home-icon-filter);
-    width: 25px;
+    width: 50px;
     height: 25px;
 
     padding: 0.5em;
@@ -121,3 +122,30 @@ nav #site-logo:hover {
     box-shadow: var(--nav-logo-box-shadow);
 }
 
+/* Devices between 576px and 768px */
+/* Devices between 0 and 576px */
+@media (max-width: 768px) {
+    nav #site-logo {
+        display: none;
+    }
+}
+
+/* Devices between 0 and 576px */
+@media (max-width: 576px) {
+    nav {
+        flex-flow: column-reverse nowrap;
+        justify-content: space-between;
+        gap: 0.2em 0;
+    }
+  
+    nav ul#navbar-menu {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    nav ul#navbar-menu li {
+        padding: 0.25em 0.5em;
+    }
+}
