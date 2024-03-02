@@ -1,0 +1,123 @@
+:root {
+    --nav-font: 400 16px/1.5 "Rubik", sans-serif ;
+    --nav-font-color: rgb(255, 255, 255); 
+    --nav-background-color: black;
+    --nav-icon-filter: invert(100%) sepia(8%) saturate(0%) hue-rotate(127deg) brightness(107%) contrast(108%);
+    --nav-home-icon-filter: invert(100%) sepia(8%) saturate(0%) hue-rotate(127deg) brightness(107%) contrast(108%);
+    --nav-button-radius: 0.75em 0.3em 0.5em 0.3em;
+    --nav-logo-radius: 1em;
+    --nav-icon-container-width: 14em;
+    --nav-menu-container-width: 17em;
+
+    --nav-color-hover: #7EC3F1;
+    --nav-border-hover: 4px solid #7EC3F1;
+    --nav-icon-hover-filter:  invert(86%) sepia(8%) saturate(7377%) hue-rotate(174deg) brightness(98%) contrast(93%);
+    --nav-logo-hover-filter: invert(88%) sepia(17%) saturate(2707%) hue-rotate(0deg) brightness(105%) contrast(103%);
+    --nav-logo-hover-width: 150px;
+    --nav-logo-box-shadow: 0px 10px 100px 10px rgba(51, 67, 214, 0.651);
+    --nav-button-radius-hovered: 0.75em;
+
+    --body-background: gray;
+}   
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: var(--nav-font);
+
+    background: var(--body-background);
+}
+
+nav {
+    width: 100%;
+    padding: 0.3em 0 0;
+    color: var(--nav-font-color);
+    background: var(--nav-background-color);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* General nav styles */
+nav ul {
+    list-style-type: none; /*removes bullet for list items*/
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+}
+
+nav a {
+    text-decoration: none; /*remove the ugly underlines below link*/
+}
+
+nav ul li {
+    color: var(--nav-font-color);
+    transition: all 0.2s ease-in;
+    
+    flex: 1 1; /*buttons should shrink and grow with same rates*/
+}
+
+/* Specific nav icon styles*/
+nav ul#navbar-icons {
+    width: var(--nav-icon-container-width);
+}
+
+nav ul#navbar-icons img {
+    width: 35px;
+    height: 35px;
+
+    filter: var(--nav-icon-filter);
+
+    transition: all 0.2s ease-in-out;
+}
+
+nav ul#navbar-icons img:hover {
+    scale: 1.25;
+    filter: var(--nav-icon-hover-filter);
+
+}
+
+/* Specific nav menu styles */
+nav ul#navbar-menu {
+    width: var(--nav-menu-container-width);
+}
+
+nav ul#navbar-menu li {
+    padding: 0.25em 0.4em;
+    border: 2px solid var(--nav-font-color);
+    border-radius: var(--nav-button-radius);
+}
+
+nav ul#navbar-menu li:hover {
+    background-color: var(--nav-color-hover);
+    border: var(--nav-border-hover);
+    color: black;
+
+    border-radius: var(--nav-button-radius-hovered);
+}
+
+/* Nav logo styles*/
+nav #site-logo {
+    filter: var(--nav-home-icon-filter);
+    width: 25px;
+    height: 25px;
+
+    padding: 0.5em;
+    border: 2px solid black;
+    border-radius: var(--nav-logo-radius);
+
+    transition: all 0.5s ease 0s;;
+}
+
+nav #site-logo:hover {
+    width: var(--nav-logo-hover-width);
+
+    filter: var(--nav-logo-hover-filter);
+    box-shadow: var(--nav-logo-box-shadow);
+}
+
